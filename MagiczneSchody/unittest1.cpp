@@ -1,18 +1,22 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
+#include "I2C.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace MagiczneSchody
+namespace I2CTests
 {		
-	TEST_CLASS(UnitTest1)
+	TEST_CLASS(I2C_Stub)
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(Address)
 		{
-			// TODO: W tym miejscu dodaj kod testowy
-			
+			I2C i2c;
+			char data[2] = { 0xFF, 0xFF };
+
+			i2c.write(0x48, data, 2, true);
+			Assert::AreEqual(0x48, i2c.getAddress());
 		}
 
 	};
