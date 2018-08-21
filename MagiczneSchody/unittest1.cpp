@@ -16,6 +16,7 @@ namespace I2CTests
 			char data[2] = { 0xFF, 0xFF };
 			/*modyfikacja*/
 			/*modyfikacja2*/
+			/*mod3*/
 			i2c.write(0x48, data, 2, true);
 			Assert::AreEqual(0x48, i2c.getAddress());
 		}
